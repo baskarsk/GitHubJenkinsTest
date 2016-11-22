@@ -1,0 +1,12 @@
+{
+	"APP_NAME":"SecurityAPI",
+	"LOCAL_DB":"mongodb://localhost/users",
+	"HEX":"hex",
+	"UTF8":"utf8",
+	"SECRET_KEY":"secretkey",
+	"ENCRYPTION_TYPE":"aes192",
+	"CTSLDAP" :",dc=people,dc=cts",
+	"JSONTOKEN" : "jsontoken",
+	"JSONENCRYPTION":"HS256",
+	"LOG_LEVEL" : "info"
+}
