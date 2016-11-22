@@ -19,3 +19,4 @@ env:
   eurekaServer: serviceregister.mybluemix.net
   eurekaPort: 80
   statusUrl: https://security-api.mybluemix.net/info
+  
