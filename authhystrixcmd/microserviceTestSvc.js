@@ -14,22 +14,22 @@
 * limitations under the License.
 *******************************************************************************/
 
-var config = require('../config.json');
-var logger = require('bunyan').createLogger({
+var config = require("../config.json");
+var logger = require("bunyan").createLogger({
 	name:config.APP_NAME,
 	level: config.LOG_LEVEL});
 
 //module.exports = function (authService,settings) {
 module.exports = function () {
-    var module = {};
-	var hystrix = require('../netflix/hystrix/index.js');
-	var command = require('../netflix/hystrix/command.js');
+	var module = {};
+	var hystrix = require("../netflix/hystrix/index.js");
+	var command = require("../netflix/hystrix/command.js");
 	var validateLDAP =new require("../routes/ldap.js");
 
 	module.hystrixStream = function(request, response){
 		logger.info("----- In hystrixStream ----");
 		hystrix.hystrixStream(request, response);
-	}
+	};
 
 	module.validateLDAPuser = function(req, callback /* (error, sessionId) */){
 		 logger.info("----- In MicroTestSvc validateLDAPuser ----");
@@ -44,10 +44,10 @@ module.exports = function () {
 				callback(null,resp);
 			}
 		});
-	}
+	};
 	
 	return module;
-}
+};
 //exports.mongoDbConnection = mongoDbConnection;
 
 

@@ -5,18 +5,17 @@ applications:
   command: node app.js
   memory: 256M
   instances: 1
-  domain: mybluemix.net  
+  domain: bmxnp.appl.kp.org  
 services:
 - kaiser-users-mongodb
 env:
-  serviceUrl: https://BaskarLDAPbd490205-6edd-4f0a-b9bc-f0654a471027.mybluemix.net
-  apiKey: e62c4360-9076-11e6-be1b-07f94c7038be
+  serviceUrl: http://kaiser-authentication-app.bmxnp.appl.kp.org
+  apiKey: 3a761850-a220-11e6-b2a3-f33ffabc951a
   platform: Bluemix
-  organization: Cognizant
-  authdomain: cognizant.com
-  serverdomain: mybluemix.net
+  organization: Kaiser
+  authdomain: cs.msds.kp.org
+  serverdomain: bmxnp.appl.kp.org
   vipAddress: security-api-client
-  eurekaServer: serviceregister.mybluemix.net
+  eurekaServer: cdts-eureka.bmxnp.appl.kp.org
   eurekaPort: 80
-  statusUrl: https://security-api.mybluemix.net/info
-  
+  statusUrl: https://security-api.bmxnp.appl.kp.org/info

@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var userSchema = mongoose.Schema({
@@ -9,4 +9,4 @@ var userSchema = mongoose.Schema({
     tokenValidity : Boolean // This is basically TRUE during initial login ,upon logout , it would be FALSE to invalidate accesstoken - 21Oct2016.
 }, { _id: false });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);
