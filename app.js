@@ -57,10 +57,10 @@ var logger = require("bunyan").createLogger({
 //console.log('statusUrl:'+statusUrl);
 
 //eureka 
-/* const Eureka = require("eureka-js-client").Eureka; */
+ const Eureka = require("eureka-js-client").Eureka; 
 
 // example configuration 
-/*const client = new Eureka({
+const client = new Eureka({
 	instance: {
 		app: appName,
 		hostName: hostName,
@@ -81,13 +81,13 @@ var logger = require("bunyan").createLogger({
 		port: eurekaPort,
 		servicePath: "/eureka/apps/",
 	},
-}); */
+}); 
 
-/*client.logger.level("debug");*/
+client.logger.level("debug");
 
-/*client.start((error) => {
+client.start((error) => {
 	logger.info(error || "complete");
-});*/
+});
 
 // Bind mongodb connection
 var mongoUrl = appEnv.getServiceURL("kaiser-users-mongodb");
@@ -153,10 +153,10 @@ app.get("/info", function (req, res) {
 });
 
 //user route. MVP1 until LDAP is configured for groups
-var user =  require("./routes/user.js")(app);
+var user =  require("../routes/user.js")(app);
 
 //authentication route
-var authentication =  require("./routes/auth.js")(app);
+var authentication =  require("../routes/auth.js")(app);
 
 //eureka code
 app.get("/deregister-eureka", function (req, res) {
