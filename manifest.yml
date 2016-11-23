@@ -9,13 +9,13 @@ applications:
 services:
 - kaiser-users-mongodb
 env:
-  serviceUrl: http://kaiser-authentication-app.bmxnp.appl.kp.org
-  apiKey: 3a761850-a220-11e6-b2a3-f33ffabc951a
+  serviceUrl: https://BaskarLDAPbd490205-6edd-4f0a-b9bc-f0654a471027.mybluemix.net
+  apiKey: e62c4360-9076-11e6-be1b-07f94c7038be
   platform: Bluemix
-  organization: Kaiser
-  authdomain: cs.msds.kp.org
-  serverdomain: bmxnp.appl.kp.org
+  organization: Cognizant
+  authdomain: cognizant.com
+  serverdomain: mybluemix.net
   vipAddress: security-api-client
-  eurekaServer: cdts-eureka.bmxnp.appl.kp.org
+  eurekaServer: serviceregister.mybluemix.net
   eurekaPort: 80
-  statusUrl: https://security-api.bmxnp.appl.kp.org/info
+  statusUrl: https://security-api-githubjenkinstest.mybluemix.net/info
