@@ -5,7 +5,7 @@ applications:
   command: node app.js
   memory: 256M
   instances: 1
-  domain: bmxnp.appl.kp.org  
+  domain: mybluemix.net  
 services:
 - kaiser-users-mongodb
 env:
