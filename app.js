@@ -77,11 +77,11 @@ var statusUrl = process.env.statusUrl  || 'http://localhost:8001';
   },
 });*/
 
-client.logger.level('debug');
+/*client.logger.level('debug');
 
 client.start((error) => {
   console.log(error || 'complete');
-});
+}); */
 
 // Bind mongodb connection
 var mongoUrl = appEnv.getServiceURL('kaiser-users-mongodb');
