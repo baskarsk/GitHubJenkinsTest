@@ -35,5 +35,9 @@
   "repository": {},
   "engines": {
     "node": "6.x"
+  },
+  "devDependencies": {
+    "gulp-env": "^0.4.0",
+    "supertest": "^2.0.1"
   }
 }

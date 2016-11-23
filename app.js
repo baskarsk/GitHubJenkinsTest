@@ -51,10 +51,10 @@ var statusUrl = process.env.statusUrl  || 'http://localhost:8001';
 //console.log('statusUrl:'+statusUrl);
 
 //eureka 
-const Eureka = require('eureka-js-client').Eureka;
+/*const Eureka = require('eureka-js-client').Eureka; */
 
 // example configuration 
-const client = new Eureka({
+/*const client = new Eureka({
   instance: {
     app: appName,
     hostName: hostName,
@@ -75,7 +75,7 @@ const client = new Eureka({
     port: eurekaPort,
     servicePath: '/eureka/apps/',
   },
-});
+});*/
 
 client.logger.level('debug');
 
@@ -151,7 +151,7 @@ var user =  require('./routes/user.js')(app);
 var authentication =  require('./routes/auth.js')(app);
 
 //eureka code
-app.get('/deregister-eureka', function (req, res) {
+/*app.get('/deregister-eureka', function (req, res) {
   client.stop((error) => {
 	  if(!error){
 		  res.status(200).send('Client successfully deregistered');
@@ -159,7 +159,7 @@ app.get('/deregister-eureka', function (req, res) {
 		  res.status(404).send('Oops... some error occured');
 	  }
   });  
-});
+}); */
 
 app.get('/service-instances/:applicationName', function (req, res) {
   res.status(200).send(client.getInstancesByAppId(req.params.applicationName));
