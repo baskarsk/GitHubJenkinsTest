@@ -153,10 +153,10 @@ app.get("/info", function (req, res) {
 });
 
 //user route. MVP1 until LDAP is configured for groups
-var user =  require("../routes/user.js")(app);
+var user =  require("./routes/user.js")(app);
 
 //authentication route
-var authentication =  require("../routes/auth.js")(app);
+var authentication =  require("./routes/auth.js")(app);
 
 //eureka code
 app.get("/deregister-eureka", function (req, res) {
