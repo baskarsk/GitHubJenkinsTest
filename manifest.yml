@@ -16,6 +16,6 @@ env:
   authdomain: cognizant.com
   serverdomain: mybluemix.net
   vipAddress: security-api-client
-  eurekaServer: serviceregister.mybluemix.net
+  eurekaServer: cdts-eureka.mybluemix.net
   eurekaPort: 80
   statusUrl: https://security-api-githubjenkinstest.mybluemix.net/info
