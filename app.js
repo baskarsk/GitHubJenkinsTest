@@ -30,12 +30,12 @@ var cors = require("cors");
 // get the app environment from Cloud Foundry
 // Node server details
 var appEnv = cfenv.getAppEnv();
-//var port = appEnv.port || "8001";
-var port = appEnv.port;
-//var routeUrl =  appEnv.bind || "localhost";
-var routeUrl =  appEnv.bind;
-//var appName = appEnv.name || "security-api";
+var port = appEnv.port || "8001";
+//var port = appEnv.port;
+var routeUrl =  appEnv.bind || "localhost";
+//var routeUrl =  appEnv.bind;
 var appName = appEnv.name || "security-api";
+//var appName = appEnv.name || "security-api";
 var serverdomain = process.env.serverdomain || "mybluemix.net";
 var hostName = appName + "." + serverdomain;
 var vipAddr = process.env.vipAddress || "security-api-client.mybluemix.net";
@@ -156,10 +156,10 @@ app.get("/info", function (req, res) {
 });
 
 //user route. MVP1 until LDAP is configured for groups
-var user =  require('./routes/user.js')(app);
+var user =  require("./routes/user.js")(app);
 
 //authentication route
-var authentication =  require('./routes/auth.js')(app);
+var authentication =  require("./routes/auth.js")(app);
 
 //eureka code
 app.get("/deregister-eureka", function (req, res) {
