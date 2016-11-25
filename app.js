@@ -30,15 +30,18 @@ var cors = require("cors");
 // get the app environment from Cloud Foundry
 // Node server details
 var appEnv = cfenv.getAppEnv();
-var port = appEnv.port || "8001";
-var routeUrl =  appEnv.bind || "localhost";
+//var port = appEnv.port || "8001";
+var port = appEnv.port;
+//var routeUrl =  appEnv.bind || "localhost";
+var routeUrl =  appEnv.bind;
+//var appName = appEnv.name || "security-api";
 var appName = appEnv.name || "security-api";
 var serverdomain = process.env.serverdomain || "mybluemix.net";
 var hostName = appName + "." + serverdomain;
 var vipAddr = process.env.vipAddress || "security-api-client.mybluemix.net";
-var eurekaServer = process.env.eurekaServer || "localhost";
+var eurekaServer = process.env.eurekaServer || "cdts-eureka.mybluemix.net"; //"localhost";
 var eurekaPort = process.env.eurekaPort || 80;
-var statusUrl = process.env.statusUrl  || "http://localhost:8001";
+var statusUrl = process.env.statusUrl  || "https://security-api-githubjenkinstest.mybluemix.net/info";
 
 //LINT_FIX_17Nov2016
 var logger = require("bunyan").createLogger({
