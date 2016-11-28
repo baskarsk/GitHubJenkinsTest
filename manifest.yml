@@ -1,6 +1,6 @@
 ---
 applications:
-- name:  security-api-githubjenkinstest
+- name:  security-api
   disk: 1024M
   command: node app.js
   memory: 256M
@@ -18,4 +18,4 @@ env:
   vipAddress: security-api-client
   eurekaServer: cdts-eureka.mybluemix.net
   eurekaPort: 80
-  statusUrl: https://security-api-githubjenkinstest.mybluemix.net/info
+  statusUrl: https://security-api.mybluemix.net/info

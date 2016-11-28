@@ -93,7 +93,8 @@ client.start((error) => {
 });
 
 // Bind mongodb connection
-var mongoUrl = appEnv.getServiceURL("kaiser-users-mongodb");
+//var mongoUrl = appEnv.getServiceURL("kaiser-users-mongodb");
+var mongoUrl = "mongo --ssl --sslAllowInvalidCertificates sl-us-dal-9-portal.3.dblayer.com:16997/admin -u admin -p CRDFXHRDLVMYBHOG";
 var mongoose = require("mongoose");//'mongoose');
 //logger.info("mongoUrl is "+mongoUrl);
 if (mongoUrl == null) {
