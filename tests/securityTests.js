@@ -2,7 +2,7 @@ var should = require("should"),
 	sinon = require("sinon");	
 var request = require("supertest");
 
-var app = require("../app");
+var app = require("../app.js");
 var validID = process.env.VALID_ID;
 var pass = process.env.PASS;
 
@@ -17,8 +17,8 @@ describe("Security Tests:", function(){
         { 			
 		request(app)
 			 .post("/users")
-			   .send({"_id": "admin10@gmail.com",
-				"name": "Admin10",
+			   .send({"_id": "santhosh@cognizant.com",
+				"name": "password-1",
 				"group": "Admin"})
 			  .expect(200)
 			  .expect("Content-Type", /json/)
