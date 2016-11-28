@@ -9,6 +9,9 @@ applications:
 services:
 - kaiser-users-mongodb
 env:
+  name: security-api
+  routeUrl: https://security-api.mybluemix.net
+  port: 60
   serviceUrl: https://BaskarLDAPbd490205-6edd-4f0a-b9bc-f0654a471027.mybluemix.net
   apiKey: e62c4360-9076-11e6-be1b-07f94c7038be
   platform: Bluemix
