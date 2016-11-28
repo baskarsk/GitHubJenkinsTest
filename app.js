@@ -92,7 +92,7 @@ client.start((error) => {
 // Bind mongodb connection
 var mongoUrl = appEnv.getServiceURL("kaiser-users-mongodb");
 var mongoose = require("mongoose");//'mongoose');
-//logger.info("mongoUrl is "+mongoUrl);
+logger.info("mongoUrl is "+mongoUrl);
 if (mongoUrl == null) {
   //local development
 	mongoose.Promise = global.Promise;
