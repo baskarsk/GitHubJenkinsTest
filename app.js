@@ -31,17 +31,14 @@ var cors = require("cors");
 // Node server details
 var appEnv = cfenv.getAppEnv();
 var port = appEnv.port || "8001";
-//var port = appEnv.port;
 var routeUrl =  appEnv.bind || "localhost";
-//var routeUrl =  appEnv.bind;
 var appName = appEnv.name || "security-api";
-//var appName = appEnv.name || "security-api";
 var serverdomain = process.env.serverdomain || "mybluemix.net";
 var hostName = appName + "." + serverdomain;
 var vipAddr = process.env.vipAddress || "security-api-client.mybluemix.net";
-var eurekaServer = process.env.eurekaServer || "cdts-eureka.mybluemix.net"; //"localhost";
+var eurekaServer = process.env.eurekaServer || "localhost";
 var eurekaPort = process.env.eurekaPort || 80;
-var statusUrl = process.env.statusUrl  || "https://security-api-githubjenkinstest.mybluemix.net/info";
+var statusUrl = process.env.statusUrl  || "http://localhost:8001";
 
 //LINT_FIX_17Nov2016
 var logger = require("bunyan").createLogger({
@@ -60,7 +57,7 @@ var logger = require("bunyan").createLogger({
 //console.log('statusUrl:'+statusUrl);
 
 //eureka 
- const Eureka = require("eureka-js-client").Eureka; 
+const Eureka = require("eureka-js-client").Eureka;
 
 // example configuration 
 const client = new Eureka({
@@ -84,7 +81,7 @@ const client = new Eureka({
 		port: eurekaPort,
 		servicePath: "/eureka/apps/",
 	},
-}); 
+});
 
 client.logger.level("debug");
 
@@ -93,8 +90,7 @@ client.start((error) => {
 });
 
 // Bind mongodb connection
-//var mongoUrl = appEnv.getServiceURL("kaiser-users-mongodb");
-var mongoUrl = "mongo --ssl --sslAllowInvalidCertificates sl-us-dal-9-portal.3.dblayer.com:16997/admin -u admin -p CRDFXHRDLVMYBHOG";
+var mongoUrl = appEnv.getServiceURL("kaiser-users-mongodb");
 var mongoose = require("mongoose");//'mongoose');
 //logger.info("mongoUrl is "+mongoUrl);
 if (mongoUrl == null) {
