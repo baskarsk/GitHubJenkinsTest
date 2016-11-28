@@ -6,7 +6,7 @@ var app = require("../app");
 var validID = process.env.VALID_ID;
 var pass = process.env.PASS;
 
-var config = require("./config.json");
+var config = require("../config.json");
 var logger = require("bunyan").createLogger({
 	name:config.APP_NAME,
 	level: config.LOG_LEVEL});
